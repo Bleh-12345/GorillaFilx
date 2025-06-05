@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --primary: 0 72.2% 50.6%; /* Netflix Red */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 0 72.2% 50.6%;
+  --radius: 0.5rem;
+  
+  /* Chart colors */
+  --chart-1: 0 72.2% 50.6%;
+  --chart-2: 214 80% 56%;
+  --chart-3: 174 80% 36%;
+  --chart-4: 50 94% 58%;
+  --chart-5: 340 82% 52%;
+  
+  /* Sidebar colors */
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 0 0% 3.9%;
+  --sidebar-primary: 0 72.2% 50.6%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 0 0% 96.1%;
+  --sidebar-accent-foreground: 0 0% 9%;
+  --sidebar-border: 0 0% 89.8%;
+  --sidebar-ring: 0 72.2% 50.6%;
+}
+
+.dark {
+  --background: 240 10% 4%; /* Netflix Black */
+  --foreground: 0 0% 98%;
+  --muted: 240 10% 15%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 4%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 8%; /* Netflix Card Gray */
+  --card-foreground: 0 0% 98%;
+  --border: 240 10% 15%;
+  --input: 240 10% 15%;
+  --primary: 0 72.2% 50.6%; /* Netflix Red */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 10% 10%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 10% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 0 72.2% 50.6%;
+  
+  /* Chart colors */
+  --chart-1: 0 72.2% 50.6%;
+  --chart-2: 214 80% 56%;
+  --chart-3: 174 80% 36%;
+  --chart-4: 50 94% 58%;
+  --chart-5: 340 82% 52%;
+  
+  /* Sidebar colors */
+  --sidebar-background: 240 10% 4%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 0 72.2% 50.6%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 10% 15%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 240 10% 15%;
+  --sidebar-ring: 0 72.2% 50.6%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Netflix-inspired custom styles */
+@layer components {
+  .netflix-gradient {
+    @apply bg-gradient-to-t from-background via-transparent to-background/80;
+  }
+  
+  .header-gradient {
+    @apply bg-gradient-to-b from-background to-transparent;
+  }
+  
+  .movie-card {
+    @apply transition-transform duration-300 ease-in-out hover:scale-105 hover:z-10 hover:shadow-xl;
+  }
+  
+  .movie-info {
+    @apply opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;
+  }
+  
+  .row-container {
+    @apply flex space-x-2 overflow-x-auto pb-4 scrollbar-hide;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Define keyframes animation for the hero banner */
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
